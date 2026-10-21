@@ -1,0 +1,3 @@
+{
+  "extends": "@soms/config/tsconfig.base.json"
+}

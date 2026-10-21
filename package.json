@@ -1,0 +1,31 @@
+{
+  "name": "soms",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "check-types": "turbo run check-types",
+    "dev:web": "turbo run dev -F web --",
+    "env:generate": "varlock codegen --path ./apps/web/",
+    "postinstall": "varlock codegen --path ./apps/web/"
+  },
+  "dependencies": {
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@soms/config": "*",
+    "@types/node": "^26.4.1",
+    "turbo": "^2.11.7",
+    "typescript": "^6.0.3",
+    "varlock": "1.18.0"
+  },
+  "packageManager": "npm@12.2.0",
+  "allowScripts": {
+    "esbuild": true
+  }
+}
