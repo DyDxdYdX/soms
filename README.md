@@ -2,6 +2,8 @@
 
 A responsive web app for monitoring sales orders across branches. The dashboard shows overall order metrics; the order list supports search, filters, and pagination.
 
+Live site: [soms.dydxdydx.com](https://soms.dydxdydx.com/)
+
 ## Status
 
 The frontend uses the sales orders API for dashboard metrics, order listings, filter options, and order details.

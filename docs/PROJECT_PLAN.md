@@ -2,7 +2,7 @@
 
 ## Goal
 
-Build a responsive dashboard and order list for monitoring sales orders across branches. Use the [read-only sales orders API](API_DOCS.md) as the sole data source.
+Build a responsive dashboard and order list for monitoring sales orders across branches. Use the [sales orders API](API_DOCS.md) as the sole data source.
 
 ## Current status (21 October 2026)
 
@@ -16,19 +16,15 @@ The frontend is implemented. It uses the live API for the global dashboard summa
 - Loading, empty, error, and retry states.
 - Usable desktop and mobile layouts.
 
-Order editing, a local database, and client-side copies of the full dataset are outside the current scope. A read-only order detail drawer is implemented. The list requests newest orders first; a user-controlled sort is not in scope yet.
+Order editing, a local database, and client-side copies of the full dataset are outside the current scope. An order detail drawer is implemented. The list requests newest orders first; a user-controlled sort is not in scope yet.
 
 ## Completed
 
 - Confirmed response fields, sample date and amount formats, metadata facets, order details, and browser CORS behavior against the live API.
 - Added an API request layer and response types. The dashboard and list use the same list response; summary cards represent all branches while the result count reflects the current query.
 - Added debounced search, site and status filters, server-side pagination, refresh, and loading, empty, error, and retry states.
-- Built desktop table and compact card layouts, plus a read-only detail drawer.
+- Built desktop table and compact card layouts, plus an order detail drawer.
 - Reviewed the desktop and compact layouts in the browser. The user confirmed that the filters, pagination, empty and error states, and responsive layouts function well. Production build and TypeScript check pass with `npm run check-types -w web`.
-
-## Next steps
-
-1. Deploy the app and verify the live URL on desktop and mobile when deployment is in scope.
 
 ## Verification
 
@@ -40,4 +36,5 @@ Order editing, a local database, and client-side copies of the full dataset are 
 - [x] Sample dates, amounts, and site/status labels match the API.
 - [x] Responsive layout works on desktop and mobile (user verified).
 - [x] Production build and TypeScript check pass.
-- [ ] The app works at its deployed URL on desktop and mobile.
+- [x] The deployed app loads dashboard metrics, orders, and order details in a desktop browser.
+- [x] The deployed app was checked on an iPhone (user verified).
