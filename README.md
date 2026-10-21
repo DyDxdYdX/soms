@@ -4,7 +4,7 @@ A responsive web app for monitoring sales orders across branches. The dashboard 
 
 ## Status
 
-The frontend uses the read-only sales orders API for dashboard metrics, order listings, filter options, and order details.
+The frontend uses the sales orders API for dashboard metrics, order listings, filter options, and order details.
 
 ## Run locally
 

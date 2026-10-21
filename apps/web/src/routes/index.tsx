@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Activity, CircleAlert, LockKeyhole, RefreshCw } from "lucide-react";
+import { Activity, CircleAlert, RefreshCw } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
   fetchMeta,
@@ -133,9 +133,6 @@ function Dashboard() {
             </div>
           </div>
           <div className="flex shrink-0 items-center gap-3 sm:gap-5">
-            <div className="hidden items-center gap-2 rounded-full bg-[#edf3e9] px-3 py-2 text-[11px] font-semibold text-[#66806c] lg:flex">
-              <LockKeyhole size={13} /> Read-only
-            </div>
             <div className="hidden items-center gap-2 text-xs text-[#6f8577] md:flex">
               <span className="size-2 rounded-full bg-[#6dba80]" />
               {updatedAt
@@ -215,9 +212,6 @@ function Dashboard() {
           onPageChange={setPage}
           onSelectOrder={setSelected}
         />
-        <p className="mt-6 text-center text-[11px] text-[#a0aea1]">
-          Harrisons Sabah · Read-only sales order monitoring
-        </p>
       </main>
       {selected && (
         <OrderDrawer

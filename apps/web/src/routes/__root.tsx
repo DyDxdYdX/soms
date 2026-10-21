@@ -14,7 +14,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
       },
       {
         name: "description",
-        content: "Read-only sales order monitoring across Harrisons Sabah branches.",
+        content: "Sales order monitoring across Harrisons Sabah branches.",
       },
     ],
     links: [

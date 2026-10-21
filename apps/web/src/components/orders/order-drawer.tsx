@@ -1,7 +1,6 @@
 import {
   Activity,
   ArrowUpRight,
-  Check,
   ClipboardList,
   Clock3,
   MapPin,
@@ -52,7 +51,7 @@ export function OrderDrawer({
           <div className="flex items-start justify-between gap-4">
             <div>
               <div className="text-[10px] font-bold uppercase tracking-[.2em] text-[#87a08b]">
-                Order record <span className="mx-1">/</span> Read-only
+                Order details
               </div>
               <h2 className="mt-2 font-mono text-2xl font-bold tracking-tight text-[#23442f]">
                 {order.id}
@@ -152,11 +151,6 @@ export function OrderDrawer({
               value={field(raw, "HAR_DeliveryDistrictDescription")}
             />
           </DetailSection>
-        </div>
-        <div className="mt-auto border-t border-[#e6ece3] bg-white px-6 py-4 sm:px-8">
-          <div className="flex items-center gap-2 text-xs text-[#8ca08f]">
-            <Check size={15} /> This record is available for viewing only.
-          </div>
         </div>
       </aside>
     </div>
