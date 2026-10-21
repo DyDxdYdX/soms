@@ -4,16 +4,20 @@ A responsive web app for monitoring sales orders across branches. The dashboard 
 
 ## Status
 
-The repository currently contains the frontend scaffold. The dashboard and API integration are planned but not yet implemented.
+The frontend uses the read-only sales orders API for dashboard metrics, order listings, filter options, and order details.
 
 ## Run locally
 
 ```bash
 npm install
+cp apps/web/.env.example apps/web/.env
+# Fill in apps/web/.env using the API settings in docs/API_DOCS.md.
 npm run dev:web
 ```
 
 Open <http://localhost:3001>. Other root commands: `npm run build` and `npm run check-types`.
+
+Set `SALES_ORDERS_API_URL` and `SALES_ORDERS_API_KEY` in the hosting provider before building. Both values are included in the browser bundle.
 
 ## Architecture
 
