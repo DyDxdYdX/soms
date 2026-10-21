@@ -4,6 +4,10 @@
 
 Build a responsive dashboard and order list for monitoring sales orders across branches. Use the [read-only sales orders API](API_DOCS.md) as the sole data source.
 
+## Current status (21 October 2026)
+
+The frontend is implemented. It uses the live API for the global dashboard summary, paginated orders, filter options, and individual order details. The layout uses Tailwind and has a compact header rather than a sidebar. The route, API layer, metrics, filters, results, and detail drawer are separated into readable components.
+
 ## Scope
 
 - Dashboard: total orders, open/pending, completed, cancelled, and total order value.
@@ -12,21 +16,28 @@ Build a responsive dashboard and order list for monitoring sales orders across b
 - Loading, empty, error, and retry states.
 - Usable desktop and mobile layouts.
 
-Order editing, a local database, and client-side copies of the full dataset are outside the current scope. Order details and sorting can follow the core view.
+Order editing, a local database, and client-side copies of the full dataset are outside the current scope. A read-only order detail drawer is implemented. The list requests newest orders first; a user-controlled sort is not in scope yet.
+
+## Completed
+
+- Confirmed response fields, sample date and amount formats, metadata facets, order details, and browser CORS behavior against the live API.
+- Added an API request layer and response types. The dashboard and list use the same list response; summary cards represent all branches while the result count reflects the current query.
+- Added debounced search, site and status filters, server-side pagination, refresh, and loading, empty, error, and retry states.
+- Built desktop table and compact card layouts, plus a read-only detail drawer.
+- Reviewed the desktop and compact layouts in the browser. The user confirmed that the filters, pagination, empty and error states, and responsive layouts function well. Production build and TypeScript check pass with `npm run check-types -w web`.
 
 ## Next steps
 
-1. Confirm response field names, date and amount formats, and browser CORS behavior.
-2. Add an API request layer and response types.
-3. Build the dashboard and order list using one list response.
-4. Add search, filters, pagination, and request states.
-5. Check the layout on desktop and mobile; build and type-check the app.
+1. Deploy the app and verify the live URL on desktop and mobile when deployment is in scope.
 
 ## Verification
 
-- [ ] Dashboard metrics match the global API summary.
-- [ ] Search and filters change the list and result count without changing global cards.
-- [ ] Pagination and filter resets work.
-- [ ] Empty results and API errors display useful messages.
-- [ ] Dates, amounts, and site/status labels match the API.
+- [x] Dashboard metrics match the global API summary.
+- [x] Search changes the list and matching result count.
+- [x] Site and status filters change the list and result count without changing global cards (user verified).
+- [x] Pagination and filter resets work in the browser (user verified).
+- [x] Empty results and API errors display useful messages in the browser (user verified).
+- [x] Sample dates, amounts, and site/status labels match the API.
+- [x] Responsive layout works on desktop and mobile (user verified).
+- [x] Production build and TypeScript check pass.
 - [ ] The app works at its deployed URL on desktop and mobile.
